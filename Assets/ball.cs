@@ -21,7 +21,7 @@ public class ball : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		transform.Translate(0, 0, this.speed);
+		transform.Translate(0, 0,speed);
 
 		if (Input.GetKey(KeyCode.LeftArrow)|| Input.GetMouseButton(0))
 		{

@@ -19,9 +19,9 @@ public class speedUP : MonoBehaviour {
 	{
 
 		//障害物に衝突した場合（追加）
-		if (other.gameObject.tag )
+		if (other.gameObject.tag == "syougaiTag")
 		{
-			GameObject.Find("ball").GetComponent<score>().point += 0.1;
+			GameObject.Find("ball").GetComponent<ball>().speed += 0.01f;
 		}
 	}
 }

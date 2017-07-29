@@ -26,7 +26,7 @@ public class Item : MonoBehaviour {
 		{
 
 				//レーンごとにアイテムを生成
-				for (float j = -0.5f; j < 0.5; j+=0.1f)
+				for (float j = -0.5f; j < 0.5; j+=0.117f)
 				{
 					//アイテムの種類を決める
 					int item = Random.Range(1, 11);
