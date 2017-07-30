@@ -12,9 +12,9 @@ public class Item : MonoBehaviour {
 	public GameObject G3Pre;
 
 	//スタート地点
-	private int startPos = -260;
+	private int startPos = -310;
 	//ゴール地点
-	private int goalPos = 290;
+	private int goalPos = 340;
 	//アイテムを出すx方向の範囲
 	private float posRange = 40.0f;
 
@@ -23,14 +23,28 @@ public class Item : MonoBehaviour {
 	{
 
 			//一定の距離ごとにアイテムを生成
-			for (int i = startPos; i < goalPos; i += 20)
+			for (int i = startPos; i < goalPos; i += 30)
 			{
-			if (i >-200) {
+			if (i > -200)
+			{
+				i -= 5;
+			}
+			else if (-200 < i && i < -50)
+			{
+				i -= 5;
+			}
+			else if (-50 < i && i < 200)
+			{
+				i = 5;
+			}
+			else if (200 < i)
+			{
 				i -= 5;
 			}
 
-				//レーンごとにアイテムを生成
-				for (float j = -0.35f; j < 0.35; j += 0.1f)
+
+			//レーンごとにアイテムを生成
+			for (float j = -0.35f; j < 0.35; j += 0.1f)
 				{
 					//アイテムの種類を決める
 					int item = Random.Range(1, 11);
@@ -44,7 +58,7 @@ public class Item : MonoBehaviour {
 						G1.transform.position = new Vector3(G1.transform.position.x, posRange * j, i + offsetZ);
 					}
 				}
-				for (float j = -0.35f; j < 0.35; j += 0.05f)
+				for (float j = -0.35f; j < 0.35; j += 0.06f)
 				{
 					//アイテムの種類を決める
 					int item = Random.Range(1, 11);
@@ -59,7 +73,7 @@ public class Item : MonoBehaviour {
 						G2.transform.position = new Vector3(G2.transform.position.x, posRange * j, i + offsetZ);
 					}
 				}
-				for (float j = -0.35f; j < 0.35; j += 0.07f)
+				for (float j = -0.35f; j < 0.35; j += 0.08f)
 				{
 					//アイテムの種類を決める
 					int item = Random.Range(1, 11);

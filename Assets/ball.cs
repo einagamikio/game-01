@@ -16,11 +16,15 @@ public class ball : MonoBehaviour
 	//ゲーム終了の判定（追加）
 	public bool isEnd = false;
 
+	private GameObject efe;
+	
 
 	// Use this for initialization
 	void Start()
 	{
 		myRigidbody = GetComponent<Rigidbody>();
+
+		this.efe = GameObject.Find("sprite_realExplosion_c_example");
 
 	}
 
@@ -32,7 +36,10 @@ public class ball : MonoBehaviour
 		{
 			this.speed *= this.coefficient;
 			this.upForce *= this.coefficient;
+			transform.localScale = new Vector3(0, 0, 0);
+			
 			this.myRigidbody.velocity = new Vector3(0, 0, 0);
+
 		}
 
 
@@ -56,9 +63,11 @@ public class ball : MonoBehaviour
 	{
 
 		//障害物に衝突した場合（追加）
-		if (other.gameObject.tag == "syougaiTag")
+		if (other.gameObject.tag == "syougaiTag"|| other.gameObject.tag == "wallTag")
 		{
 			this.isEnd = true;
+			this.efe.GetComponent<ParticleSystem>().Play();
+
 		}
 	}
 }
