@@ -21,37 +21,60 @@ public class Item : MonoBehaviour {
 	// Use this for initialization
 	void Start()
 	{
-		//一定の距離ごとにアイテムを生成
-		for (int i = startPos; i < goalPos; i += 10)
-		{
+
+			//一定の距離ごとにアイテムを生成
+			for (int i = startPos; i < goalPos; i += 20)
+			{
+			if (i >-200) {
+				i -= 5;
+			}
 
 				//レーンごとにアイテムを生成
-				for (float j = -0.5f; j < 0.5; j+=0.117f)
+				for (float j = -0.35f; j < 0.35; j += 0.1f)
 				{
 					//アイテムの種類を決める
 					int item = Random.Range(1, 11);
 					//アイテムを置くZ座標のオフセットをランダムに設定
 					int offsetZ = Random.Range(-5, 5);
-				    //60%コイン配置:30%車配置:10%何もなし
-				if (1 <= item && item <= 2)
+					
+
+					if (1 <= item && item <= 2)
+					{
+						GameObject G1 = Instantiate(G1Pre) as GameObject;
+						G1.transform.position = new Vector3(G1.transform.position.x, posRange * j, i + offsetZ);
+					}
+				}
+				for (float j = -0.35f; j < 0.35; j += 0.05f)
 				{
-					GameObject G1 = Instantiate(G1Pre) as GameObject;
-					G1.transform.position = new Vector3(G1.transform.position.x, posRange * j, i + offsetZ);
+					//アイテムの種類を決める
+					int item = Random.Range(1, 11);
+					//アイテムを置くZ座標のオフセットをランダムに設定
+					int offsetZ = Random.Range(-5, 5);
+					
+
+					if (3 <= item && item <= 5)
+					{
+						//G2を生成
+						GameObject G2 = Instantiate(G2Pre) as GameObject;
+						G2.transform.position = new Vector3(G2.transform.position.x, posRange * j, i + offsetZ);
+					}
 				}
-				else if (3 <= item && item <= 5)
+				for (float j = -0.35f; j < 0.35; j += 0.07f)
 				{
-					//コインを生成
-					GameObject G2 = Instantiate(G2Pre) as GameObject;
-					G2.transform.position = new Vector3(G2.transform.position.x, posRange * j, i + offsetZ);
+					//アイテムの種類を決める
+					int item = Random.Range(1, 11);
+					//アイテムを置くZ座標のオフセットをランダムに設定
+					int offsetZ = Random.Range(-5, 5);
+					
+
+					if (6 <= item && item <= 7)
+					{
+						//G3を生成
+						GameObject G3 = Instantiate(G3Pre) as GameObject;
+						G3.transform.position = new Vector3(G3.transform.position.x, posRange * j, i + offsetZ);
+					}
 				}
-				else if (6 <= item && item <= 7)
-				{
-					//車を生成
-					GameObject G3 = Instantiate(G3Pre) as GameObject;
-					G3.transform.position = new Vector3(G3.transform.position.x, posRange * j, i + offsetZ);
-				}
-				}
-		}
+			}
 	}
 	// Update is called once per frame
 	void Update () {
