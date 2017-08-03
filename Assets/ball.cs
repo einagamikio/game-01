@@ -7,7 +7,7 @@ public class ball : MonoBehaviour
 
 	public float speed = 0.08f;
 
-	private float upForce = 0.6f;
+	public float upForce=0.6f;
 
 	private Rigidbody myRigidbody;
 
@@ -17,14 +17,19 @@ public class ball : MonoBehaviour
 	public bool isEnd = false;
 
 	private GameObject efe;
-	
+
+	public AudioSource audio;
+
 
 	// Use this for initialization
 	void Start()
 	{
-		myRigidbody = GetComponent<Rigidbody>();
+
+	    myRigidbody = GetComponent<Rigidbody>();
 
 		this.efe = GameObject.Find("sprite_realExplosion_c_example");
+
+		this.audio = GetComponent<AudioSource>();
 
 	}
 
@@ -42,8 +47,9 @@ public class ball : MonoBehaviour
 
 		}
 
-
 		transform.Translate(0, 0, speed);
+
+
 
 		if (Input.GetKey(KeyCode.LeftArrow) || Input.GetMouseButton(0))
 		{
@@ -57,6 +63,7 @@ public class ball : MonoBehaviour
 
 		}
 
+
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -67,6 +74,8 @@ public class ball : MonoBehaviour
 		{
 			this.isEnd = true;
 			this.efe.GetComponent<ParticleSystem>().Play();
+
+			audio.Play();
 
 		}
 	}

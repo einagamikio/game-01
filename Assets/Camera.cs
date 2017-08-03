@@ -8,7 +8,7 @@ public class Camera : MonoBehaviour {
 	//ballとカメラの距離
 	private float difference;
 
-	private float upForce = 0.57f;
+	public float upForce = 0.57f;
 
 	private Rigidbody myRigidbody;
 

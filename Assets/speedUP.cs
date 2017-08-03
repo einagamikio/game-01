@@ -6,10 +6,22 @@ public class speedUP : MonoBehaviour {
 
 	private GameObject efe;
 
+	public AudioSource audio;
+
+	public GameObject up;
+
+	public GameObject cam;
+
 	// Use this for initialization
 	void Start () {
 
 		this.efe = GameObject.Find("energyBlast");
+
+		this.audio = GetComponent<AudioSource>();
+
+		this.up = GameObject.Find("ball");
+
+		this.cam = GameObject.Find("Main Camera");
 
 	}
 	
@@ -26,6 +38,11 @@ public class speedUP : MonoBehaviour {
 		{
 			GameObject.Find("ball").GetComponent<ball>().speed += 0.01f;
 			this.efe.GetComponent<ParticleSystem>().Play();
+
+			audio.Play();
+
+			this.up.GetComponent<ball>().upForce += 0.01f;
+			this.cam.GetComponent<Camera>().upForce += 0.01f;
 		}
 	}
 }
