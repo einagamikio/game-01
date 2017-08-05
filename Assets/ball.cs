@@ -20,6 +20,10 @@ public class ball : MonoBehaviour
 
 	public AudioSource audio;
 
+	private bool isupButtonDown = false;
+	
+	private bool isdownButtonDown = false;
+
 
 	// Use this for initialization
 	void Start()
@@ -51,13 +55,13 @@ public class ball : MonoBehaviour
 
 
 
-		if (Input.GetKey(KeyCode.LeftArrow) || Input.GetMouseButton(0))
+		if (this.isupButtonDown)
 		{
 			this.myRigidbody.AddForce(0, this.upForce, 0);
 
 
 		}
-		else if (Input.GetKey(KeyCode.RightArrow) || Input.GetMouseButton(1))
+		else if (this.isdownButtonDown)
 		{
 			this.myRigidbody.AddForce(0, -this.upForce, 0);
 
@@ -78,5 +82,27 @@ public class ball : MonoBehaviour
 			audio.Play();
 
 		}
+	}
+
+	//左ボタンを押し続けた場合の処理（追加）
+	public void GetdownButtonDown()
+	{
+		this.isdownButtonDown = true;
+	}
+	//左ボタンを離した場合の処理（追加）
+	public void GetdownButtonUp()
+	{
+		this.isdownButtonDown = false;
+	}
+
+	//右ボタンを押し続けた場合の処理（追加）
+	public void GetupButtonDown()
+	{
+		this.isupButtonDown = true;
+	}
+	//右ボタンを離した場合の処理（追加）
+	public void GetupButtonUp()
+	{
+		this.isupButtonDown = false;
 	}
 }
