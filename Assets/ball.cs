@@ -18,6 +18,8 @@ public class ball : MonoBehaviour
 
 	private GameObject efe;
 
+	private GameObject sphere;
+
 	public AudioSource audio;
 
 	private bool isupButtonDown = false;
@@ -32,6 +34,8 @@ public class ball : MonoBehaviour
 	    myRigidbody = GetComponent<Rigidbody>();
 
 		this.efe = GameObject.Find("sprite_realExplosion_c_example");
+
+		this.sphere = GameObject.Find("Sphere");
 
 		this.audio = GetComponent<AudioSource>();
 
@@ -48,6 +52,7 @@ public class ball : MonoBehaviour
 			transform.localScale = new Vector3(0, 0, 0);
 			
 			this.myRigidbody.velocity = new Vector3(0, 0, 0);
+			sphere.SetActive(false);
 
 		}
 
@@ -74,7 +79,7 @@ public class ball : MonoBehaviour
 	{
 
 		//障害物に衝突した場合（追加）
-		if (other.gameObject.tag == "syougaiTag"|| other.gameObject.tag == "wallTag")
+		if (other.gameObject.tag == "syougaiTag"|| other.gameObject.tag == "wallTag"|| other.gameObject.tag == "lightTag")
 		{
 			this.isEnd = true;
 			this.efe.GetComponent<ParticleSystem>().Play();

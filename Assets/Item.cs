@@ -13,9 +13,9 @@ public class Item : MonoBehaviour
 	public GameObject G3Pre;
 
 	//スタート地点
-	private int startPos = -310;
+	private int startPos = 35;
 	//ゴール地点
-	private int goalPos = 340;
+	private int goalPos = 690;
 	//アイテムを出すy方向の範囲
 	private float posRange = 40.0f;
 
@@ -37,7 +37,7 @@ public class Item : MonoBehaviour
 		//一定の距離ごとにアイテムを生成
 		for (int i = startPos; i < goalPos; i += 30)
 		{
-			if (i > -200)
+			if (i > 150)
 			{
 				i -= 5;
 			}

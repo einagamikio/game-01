@@ -6,6 +6,7 @@ TagManager:
   tags:
   - syougaiTag
   - wallTag
+  - lightTag
   layers:
   - Default
   - TransparentFX

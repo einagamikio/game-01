@@ -14,6 +14,5 @@ public class G1 : MonoBehaviour {
 
 		myRigidbody = GetComponent<Rigidbody>();
 
-
 	}
 }
