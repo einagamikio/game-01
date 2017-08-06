@@ -37,9 +37,13 @@ public class Item : MonoBehaviour
 		//一定の距離ごとにアイテムを生成
 		for (int i = startPos; i < goalPos; i += 30)
 		{
-			if (i > 150)
+			if (i > 180)
 			{
-				i -= 5;
+				i -= 10;
+			}
+			else if (180 <= i && i < 350)
+			{
+				i -= 10;
 			}
 
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Leftwall : MonoBehaviour {
 
-	private float speed = 0.0004f;
+	private float speed = 0.00065f;
 
 	// Use this for initialization
 	void Start () {

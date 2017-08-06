@@ -50,7 +50,7 @@ public class ball : MonoBehaviour
 			this.speed *= this.coefficient;
 			this.upForce *= this.coefficient;
 			transform.localScale = new Vector3(0, 0, 0);
-			
+
 			this.myRigidbody.velocity = new Vector3(0, 0, 0);
 			sphere.SetActive(false);
 
