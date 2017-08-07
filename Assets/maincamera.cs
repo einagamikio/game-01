@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour {
+public class maincamera : MonoBehaviour {
 	//ballのオブジェクト
 	private GameObject ball;
 	//ballとカメラの距離
@@ -45,7 +45,7 @@ public class Camera : MonoBehaviour {
 		}
 
 		//ballの位置に合わせてカメラの位置を移動
-			this.transform.position = new Vector3(0, this.transform.position.y, this.ball.transform.position.z - difference);
+		this.transform.position = new Vector3(0, this.transform.position.y, this.ball.transform.position.z - difference);
 
 		if (this.isupButtonDown)
 		{

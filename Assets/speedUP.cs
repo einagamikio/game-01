@@ -42,7 +42,7 @@ public class speedUP : MonoBehaviour {
 			audio.Play();
 
 			this.up.GetComponent<ball>().upForce += 0.01f;
-			this.cam.GetComponent<Camera>().upForce += 0.01f;
+			this.cam.GetComponent<maincamera>().upForce += 0.01f;
 		}
 	}
 }

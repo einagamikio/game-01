@@ -17,9 +17,9 @@ public class Item : MonoBehaviour
 	//ゴール地点
 	private int goalPos = 690;
 	//アイテムを出すy方向の範囲
-	private float posRange = 40.0f;
+	private float posRange = 30.0f;
 
-	private float upForce = 0.6f;
+	public float upForce = 0.6f;
 
 
 	private List<GameObject> barriers;
@@ -37,11 +37,11 @@ public class Item : MonoBehaviour
 		//一定の距離ごとにアイテムを生成
 		for (int i = startPos; i < goalPos; i += 30)
 		{
-			if (i > 180)
+			if (i > 200)
 			{
 				i -= 10;
 			}
-			else if (180 <= i && i < 350)
+			else if (200 <= i && i < 450)
 			{
 				i -= 10;
 			}
