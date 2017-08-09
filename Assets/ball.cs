@@ -18,6 +18,8 @@ public class ball : MonoBehaviour
 
 	private GameObject efe;
 
+	private GameObject Par;
+
 	private GameObject sphere;
 
 	public AudioSource audio;
@@ -34,6 +36,8 @@ public class ball : MonoBehaviour
 	    myRigidbody = GetComponent<Rigidbody>();
 
 		this.efe = GameObject.Find("sprite_realExplosion_c_example");
+
+		this.Par = GameObject.Find("Particle System(3)");
 
 		this.sphere = GameObject.Find("Sphere");
 
@@ -85,6 +89,14 @@ public class ball : MonoBehaviour
 			this.efe.GetComponent<ParticleSystem>().Play();
 
 			audio.Play();
+
+		}
+
+		if (other.gameObject.tag == "clearTag" )
+		{
+			this.isEnd = true;
+			this.Par.GetComponent<ParticleSystem>().Play();
+
 
 		}
 	}

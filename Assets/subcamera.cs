@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class subcamera : MonoBehaviour {
 
-	public float speed = 5f;
-
 	public bool end;
 	private GameObject ball;
-
+	private float speed;
 
 	// Use this for initialization
 	void Start () {
@@ -22,10 +20,17 @@ public class subcamera : MonoBehaviour {
 
 		end = ball.GetComponent<ball>().isEnd;
 
+		speed = 1;
+
 		if (end)
 		{
 			//idouを3.5秒後に呼び出す
-			Invoke("idou", 10.0f);
+			Invoke("idou", 6.0f);
+
+			if (this.gameObject.transform.position.z >= this.ball.transform.position.z)
+			{
+				this.speed = 0;
+			}
 		}
 
 	}
@@ -35,4 +40,5 @@ public class subcamera : MonoBehaviour {
 
 		transform.Translate(-speed, 0, 0);
 	}
+
 }

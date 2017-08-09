@@ -8,7 +8,9 @@ public class socondCamera : MonoBehaviour {
 
 	public bool end;
 	private GameObject ball;
-	
+
+	float time = 0.0f;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -22,7 +24,14 @@ public class socondCamera : MonoBehaviour {
 		end = ball.GetComponent<ball>().isEnd;
 		if (end)
 		{
-			subcam.GetComponent<Camera>().depth +=0.003f;
+			time = time + Time.deltaTime;
+			if (time >= 5.0f)
+			{
+
+				time = 0;
+				subcam.GetComponent<Camera>().depth = 1;
+
+			}
 		}
 	
 	}
