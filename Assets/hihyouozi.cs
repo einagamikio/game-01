@@ -5,6 +5,7 @@ using UnityEngine;
 public class hihyouozi : MonoBehaviour {
 
 	public bool end;
+	public bool ends;
 	private GameObject ball;
 
 	// Use this for initialization
@@ -18,6 +19,13 @@ public class hihyouozi : MonoBehaviour {
 
 		end = ball.GetComponent<ball>().isEnd;
 		if (end)
+		{
+			gameObject.SetActive(false);
+		}
+
+
+		ends = ball.GetComponent<ball>().isEnds;
+		if (ends)
 		{
 			gameObject.SetActive(false);
 		}

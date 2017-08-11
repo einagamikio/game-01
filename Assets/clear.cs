@@ -7,7 +7,7 @@ public class clear : MonoBehaviour {
 	private GameObject great;
 	private GameObject thanks;
 
-	public bool end;
+	public bool ends;
 	private GameObject ball;
 
 	// Use this for initialization
@@ -22,8 +22,8 @@ public class clear : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		end = ball.GetComponent<ball>().isEnd;
-		if (end)
+		ends = ball.GetComponent<ball>().isEnds;
+		if (ends)
 		{
 			{
 				great.SetActive(true);

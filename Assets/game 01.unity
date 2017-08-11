@@ -185,8 +185,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 63314152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 776}
-  m_LocalScale: {x: 20, y: 120, z: 150}
+  m_LocalPosition: {x: 0, y: 0, z: 1052}
+  m_LocalScale: {x: 20, y: 120, z: 700}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -466,6 +466,7 @@ MonoBehaviour:
   upForce: 0.6
   coefficient: 0.95
   isEnd: 0
+  isEnds: 0
   audio: {fileID: 0}
 --- !u!23 &222843775
 MeshRenderer:
@@ -11254,6 +11255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   end: 0
+  ends: 0
 --- !u!1 &1109071781
 GameObject:
   m_ObjectHideFlags: 0
@@ -11588,7 +11590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a87a5ab4b8f104aab5e2d5e687a4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  end: 0
+  ends: 0
 --- !u!1 &1531238661
 GameObject:
   m_ObjectHideFlags: 0
@@ -15906,3 +15908,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   end: 0
+  ends: 0

@@ -15,6 +15,7 @@ public class ball : MonoBehaviour
 	public float coefficient = 0.95f;
 	//ゲーム終了の判定（追加）
 	public bool isEnd = false;
+	public bool isEnds = false;
 
 	private GameObject efe;
 
@@ -48,7 +49,6 @@ public class ball : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-
 		if (this.isEnd)
 		{
 			this.speed *= this.coefficient;
@@ -59,6 +59,8 @@ public class ball : MonoBehaviour
 			sphere.SetActive(false);
 
 		}
+
+
 
 		transform.Translate(0, 0, speed);
 
@@ -94,7 +96,7 @@ public class ball : MonoBehaviour
 
 		if (other.gameObject.tag == "clearTag" )
 		{
-			this.isEnd = true;
+			this.isEnds = true;
 			this.Par.GetComponent<ParticleSystem>().Play();
 
 
